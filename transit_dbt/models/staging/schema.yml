@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_mta_ridership
+    description: "Cleaned and typed MTA ridership data from CMS raw source"
+    columns:
+      - name: transit_timestamp
+        description: "Timestamp of the ridership record"
+        tests:
+          - not_null
+      - name: borough
+        description: "NYC borough"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Manhattan', 'Brooklyn', 'Queens', 'Bronx', 'Staten Island']
+      - name: ridership
+        description: "Number of riders"
+        tests:
+          - not_null

@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: mart_station_performance
+    description: "Aggregated ridership by station"
+    columns:
+      - name: station_complex_id
+        description: "Unique station identifier"
+        tests:
+          - not_null
+          - unique
+
+  - name: mart_borough_trends
+    description: "Daily ridership trends by borough"
+    columns:
+      - name: transit_date
+        tests:
+          - not_null
+      - name: borough
+        tests:
+          - not_null
+
+  - name: mart_transit_mode
+    description: "Ridership breakdown by transit mode"
+    columns:
+      - name: transit_mode
+        tests:
+          - not_null
+          - unique
