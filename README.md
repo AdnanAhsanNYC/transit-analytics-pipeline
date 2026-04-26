@@ -21,6 +21,7 @@ The MTA serves millions of riders daily across NYC's five boroughs. This project
 MTA API → Python → Snowflake (RAW) → dbt → Snowflake (DBT_DEV) → Tableau Public
 
 ## Project Structure
+```
 transit-analytics/
 ├── data/
 │   ├── raw/          ← raw API pull (not tracked in git)
@@ -34,7 +35,7 @@ transit_dbt/
 │   └── marts/        ← station performance, borough trends, transit mode
 ├── tests/            ← dbt schema tests
 └── dbt_project.yml
-
+```
 ## dbt Models
 | Model | Layer | Description |
 |-------|-------|-------------|
